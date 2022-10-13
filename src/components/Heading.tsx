@@ -1,7 +1,30 @@
-export function Heading () {
+import { Slot } from '@radix-ui/react-slot';
+import { clsx } from 'clsx'
+import { ReactNode } from 'react';
+
+export interface HeadingProps {
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    children: ReactNode;
+    asChild?: boolean;
+}
+
+export function Heading ({ size = 'md', children, asChild}: HeadingProps ) {
+
+    const Tag = asChild ? Slot : 'h2';
+
     return (
-        <>
-            <h1>Heading</h1>
-        </>
+        <Tag 
+        className={clsx (
+            "text-gray-200 font-medium", 
+            {
+                'text-xl': size === 'xs',
+                'text-2xl': size === 'sm',
+                'text-3xl': size === 'md',
+                'text-4xl': size === 'lg',
+                'text-5xl': size === 'xl',
+            },
+        )}>
+            {children}
+        </Tag>
     )
 }

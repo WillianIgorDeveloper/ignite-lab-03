@@ -19,7 +19,7 @@ module.exports = {
       transparent: 'transparent',
       white: '#FFF',
       black: '#000',
-      'gray': {
+      gray: {
         100: '#F2F2F2',
         200: '#E6E6E6',
         300: '#CACACA',
@@ -27,7 +27,7 @@ module.exports = {
         700: '#222222',
         800: '#191919',
       },
-      'purple': {
+      purple: {
         500: '#3F3D56',
         600: '#2F2E41',
       },
