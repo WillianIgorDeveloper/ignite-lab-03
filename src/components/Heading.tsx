@@ -6,9 +6,10 @@ export interface HeadingProps {
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     children: ReactNode;
     asChild?: boolean;
+    className?: string;
 }
 
-export function Heading ({ size = 'md', children, asChild}: HeadingProps ) {
+export function Heading ({ size = 'md', children, asChild, className}: HeadingProps ) {
 
     const Tag = asChild ? Slot : 'h2';
 
@@ -23,6 +24,7 @@ export function Heading ({ size = 'md', children, asChild}: HeadingProps ) {
                 'text-4xl': size === 'lg',
                 'text-5xl': size === 'xl',
             },
+            className,
         )}>
             {children}
         </Tag>
